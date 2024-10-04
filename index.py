@@ -1,6 +1,9 @@
 month = ('January','February','March','April','May','June','July','August','September','October','November','December')
-import random
-import time as t
+
+import random # import random module
+import time as t # import time module
+
+
 time_list = []
 for item in t.localtime():
     time_list.append(item)
@@ -43,6 +46,7 @@ the_name = []
 
 for the_list in the_birthay:
     the_name.append(the_list['Full_name'])
+
 the_name
 
 for name in the_name:
@@ -62,7 +66,7 @@ for name in the_name:
     "May this year bring you even closer to your dreams. Wishing you a truly spectacular birthday celebration!",
     "To someone who makes the world a brighter place, happy birthday! May your day be full of love and joy.",
     "Your energy and spirit inspire everyone around you. Here's to another year of greatness! Happy Birthday!",
-    "Hope your birthday is filled with as much fun and laughter as you bring to those around you. Cheers to you!",
+    "Hope your birthday is filled with as much fun and laughter as you bsring to those around you. Cheers to you!",
     "Wishing you a birthday as spectacular and unforgettable as you are. Have an amazing year ahead!",
     "On your special day, I hope all your dreams come true and the year ahead is filled with happiness and success.",
     "Here’s to another year of making memories, growing stronger, and achieving greatness. Happy Birthday!",
@@ -71,4 +75,8 @@ for name in the_name:
 
     msg_index = random.randint(0,len(msg_list)-1)
     random_msg = msg_list[msg_index]
-    print(name,',',random_msg,'. From McSolomon Nig limited')
+    print(f'{name}, {random_msg}, from Me to you')
+
+
+
+
