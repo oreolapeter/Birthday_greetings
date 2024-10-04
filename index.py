@@ -1,32 +1,34 @@
+
+# store the month of the year in a tuple
 month = ('January','February','March','April','May','June','July','August','September','October','November','December')
 
 import random # import random module
 import time as t # import time module
 
 
-time_list = []
-for item in t.localtime():
-    time_list.append(item)
+time_list = [] # empty list to store the parameters for the localtime output
+for item in t.localtime(): #loops through the items in local time
+    time_list.append(item)  # append the result to a list
 print(time_list)
 
-today = [str(time_list[2]),month[time_list[1]-1]]
+today = [str(time_list[2]),month[time_list[1]-1]] #slice the day in string and month in int (current day and month)
 
 
-response = input('thank you for your interest, please type yes to continue')
-database = []
+response = input('thank you for your interest, please type yes to continue') #default response
+database = [] #empty list to store the date collected from response
 while response == 'yes':
     name = input('What is your full name: ')
     Day_month_of_birth = input('What is your Day and Month of Birth DDMM: ')
     gender = input('What is your gender: ')
     
-    dayOB = Day_month_of_birth[0:2]
-    Months = int(Day_month_of_birth[2:])-1
+    dayOB = Day_month_of_birth[0:2] # slices the day out of the response
+    Months = int(Day_month_of_birth[2:])-1 #slice the month out
 
-    monthOB = month[Months]
-    birthday = dayOB
+    monthOB = month[Months] #converts the to text
+    birthday = dayOB 
     birthmonth = monthOB
     bio =  {'Full_name': name, 'birthday':[dayOB,monthOB],'gender':gender}
-    database.append(bio)
+    database.append(bio) #appends bio to database
     
 
 
@@ -37,6 +39,7 @@ bio =  {'Full_name': name, 'birthday':[dayOB,monthOB],'gender':gender,'birthday_
 
 the_birthay = []
 
+#check the birhtdays that falls on the current day and store the result in the list (the_birthday)
 for bio in database:
     if bio['birthday'] == today:
         the_birthay.append(bio)
@@ -48,7 +51,7 @@ for the_list in the_birthay:
     the_name.append(the_list['Full_name'])
 
 the_name
-
+# create an iteration that send a unique msg to the list of peolpe on the birthday list
 for name in the_name:
     msg_list =[
     "Wishing you a year filled with adventure, joy, and endless possibilities. Happy Birthday!",
